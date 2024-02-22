@@ -1,0 +1,17 @@
+<%- include('./components/head') %>
+
+    </head>
+
+    <body>
+        <%- include('./components/navbar') %>
+
+        <form action="<%= action === 'edit' ? 'edit-category?categoryId=' + categoryId : 'add-category' %>" method="post">
+
+            <label for="category">Category</label>
+            <input value="<%=name%>" type="text" name="category" id="category">
+            <button type="submit"><%=action==="edit"?"Edit category":"Add Category" %></button>
+        </form>
+
+
+        <%- include('./components/footer') %>
+

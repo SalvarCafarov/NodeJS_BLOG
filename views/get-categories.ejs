@@ -1,0 +1,39 @@
+<%- include('./components/head') %>
+
+    </head>
+
+    <body>
+        <%- include('./components/navbar') %>
+            <table class="table table-hover table-striped table-warning text-center mt-3">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Actions</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    <% for(var i=0; i <categories.length; i++){ %>
+                        <tr>
+                            <td>
+                                <%= i + 1%>
+                            </td>
+                            <td>
+                                <%= categories[i].name%>
+                            </td>
+                            <td><a href="/admin/add-category?action=edit&category=<%=categories[i].categoryId%> "
+                                    class="btn btn-danger">Edit</a>
+                                <a href="/admin/delete-category?category=<%=categories[i].categoryId%>"
+                                    class="btn btn-danger">delete</a>
+                            </td>
+
+
+                        </tr>
+
+                        <%}%>
+                </tbody>
+
+            </table>
+            <%- include('./components/footer') %>
